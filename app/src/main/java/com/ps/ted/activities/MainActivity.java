@@ -1,33 +1,59 @@
 package com.ps.ted.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ps.ted.R;
+import com.ps.ted.adapters.TabPagerAdapter;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class MainActivity extends BaseActivity {
+
+    private TabPagerAdapter tabPagerAdapter;
+
+    @BindView(R.id.vp_ted_tab)
+    ViewPager vpTedTab;
+
+    @BindView(R.id.tl_tabs)
+    TabLayout tabLayout;
+
+    @BindView(R.id.fab_search)
+    FloatingActionButton fabSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this, this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setBackgroundColor(getResources().getColor(R.color.accent));
         toolbar.setTitleTextColor(getResources().getColor(R.color.primary));
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        // Viewpager with fragment
+        tabPagerAdapter = new TabPagerAdapter(getSupportFragmentManager());
+        vpTedTab.setAdapter(tabPagerAdapter);
+
+        tabLayout.setupWithViewPager(vpTedTab);
+
+        fabSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                Intent searchIntent = SearchActivity.newIntent(getApplicationContext());
+                startActivity(searchIntent);
             }
         });
     }

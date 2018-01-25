@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/fl_search_hero_image"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium_2">
+
+        <ImageView
+            android:id="@+id/iv_search_placeholder_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_ted_search_video_placeholder" />
+
+        <TextView
+            android:id="@+id/tv_search_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:background="@color/black_full"
+            android:padding="@dimen/margin_small"
+            android:text="10:34"
+            android:textColor="@color/accent" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_search_speaker_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/fl_search_hero_image"
+        android:layout_toLeftOf="@+id/iv_search_more_vert"
+        android:layout_toRightOf="@id/fl_search_hero_image"
+        android:text="Deborah Willis and Hnk Wills Thomas"
+        android:textColor="@color/secondary_text" />
+
+    <TextView
+        android:id="@+id/tv_search_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_search_speaker_name"
+        android:layout_toLeftOf="@id/iv_search_more_vert"
+        android:layout_toRightOf="@id/fl_search_hero_image"
+        android:text="American bipartisan politics can be saved -- here's how"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@id/iv_search_more_vert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/fl_search_hero_image"
+        android:layout_marginLeft="@dimen/margin_card_medium"
+        android:layout_marginRight="@dimen/margin_card_medium"
+        android:src="@drawable/ic_more_vert_black_24dp" />
+</RelativeLayout>

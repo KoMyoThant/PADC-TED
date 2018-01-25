@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_medium_2">
+
+        <TextView
+            android:id="@+id/tv_search_subtitle_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recommended subtitle language"
+            android:textColor="@color/primary" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_language_icon_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/margin_medium_2"
+                android:paddingRight="@dimen/margin_large"
+                android:paddingTop="@dimen/margin_medium_2"
+                android:src="@drawable/ic_language_24dp" />
+
+            <TextView
+                android:id="@+id/tv_subtitle_language_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/iv_language_icon_1"
+                android:text="Tajik"
+                android:textColor="@color/black_full" />
+
+            <TextView
+                android:id="@+id/tv_talk_count_in_language_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:paddingLeft="@dimen/margin_medium_2"
+                android:paddingRight="@dimen/margin_medium_2"
+                android:text="11" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_language_icon_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/margin_medium_2"
+                android:paddingRight="@dimen/margin_large"
+                android:paddingTop="@dimen/margin_medium_2"
+                android:src="@drawable/ic_language_24dp" />
+
+            <TextView
+                android:id="@+id/tv_subtitle_language_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/iv_language_icon_2"
+                android:text="Filipino"
+                android:textColor="@color/black_full" />
+
+            <TextView
+                android:id="@+id/tv_talk_count_in_language_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:paddingLeft="@dimen/margin_medium_2"
+                android:paddingRight="@dimen/margin_medium_2"
+                android:text="43" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_language_icon_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/margin_medium_2"
+                android:paddingRight="@dimen/margin_large"
+                android:paddingTop="@dimen/margin_medium_2"
+                android:src="@drawable/ic_language_24dp" />
+
+            <TextView
+                android:id="@+id/tv_subtitle_language_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/iv_language_icon_3"
+                android:text="French"
+                android:textColor="@color/black_full" />
+
+            <TextView
+                android:id="@+id/tv_talk_count_in_language_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:paddingLeft="@dimen/margin_medium_2"
+                android:paddingRight="@dimen/margin_medium_2"
+                android:text="2470" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_show_all_subtitle_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show all subtitle language"
+            android:textColor="@color/primary" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

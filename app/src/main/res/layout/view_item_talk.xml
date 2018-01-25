@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginLeft="@dimen/margin_medium"
+    android:layout_marginRight="@dimen/margin_medium"
+    android:layout_marginTop="@dimen/margin_medium">
+
+    <ImageView
+        android:id="@+id/iv_play_info_placeholder_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_ted_talker_placeholder" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium">
+
+        <TextView
+            android:id="@+id/tv_talker_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_talk_title"
+            android:layout_alignParentLeft="true"
+            android:text="Azim Khamisa and Ples Felix"
+            android:textColor="@color/accent"
+            android:textSize="@dimen/text_regular" />
+
+        <TextView
+            android:id="@+id/tv_talk_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="56dp"
+            android:text="What come after tragedy? Forgiveness"
+            android:textColor="@color/accent"
+            android:textSize="@dimen/text_regular_3x"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_talk_more_vert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_talk_duration"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/margin_medium_2"
+            android:src="@drawable/ic_more_vert_white_24dp" />
+
+        <TextView
+            android:id="@id/tv_talk_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="1:15:53"
+            android:textColor="@color/accent" />
+    </RelativeLayout>
+</FrameLayout>

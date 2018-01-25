@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/tools"
+    card_view:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_medium_2">
+
+        <TextView
+            android:id="@+id/tv_search_recommend_speaker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recommended speakers"
+            android:textColor="@color/primary" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v4.widget.CircleImageView
+                android:id="@+id/iv_speaker_icon_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/margin_medium_2"
+                android:paddingRight="@dimen/margin_large"
+                android:paddingTop="@dimen/margin_medium_2"
+                app:circle_radius="60dp"
+                android:src="@drawable/img_ted_speaker_placeholder" />
+
+            <TextView
+                android:id="@+id/tv_speaker_name_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/iv_speaker_icon_1"
+                android:text="Handspring Puppet Company"
+                android:textColor="@color/black_full" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_show_all_speakers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show all speakers"
+            android:textColor="@color/primary" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.ps.ted.R;
 import com.ps.ted.adapters.PlaylistAdapter;
+import com.ps.ted.components.EmptyViewPod;
+import com.ps.ted.components.SmartRecyclerView;
 import com.ps.ted.delegates.PlaylistItemDelegate;
 
 import butterknife.BindView;
@@ -24,7 +26,10 @@ import butterknife.ButterKnife;
 public class PlaylistFragment extends BaseFragment implements PlaylistItemDelegate {
 
     @BindView(R.id.rv_playlist)
-    RecyclerView rvPlaylist;
+    SmartRecyclerView rvPlaylist;
+
+    @BindView(R.id.vp_empty_playlist)
+    EmptyViewPod vpEmptyPlaylist;
 
     public PlaylistFragment() {
 
@@ -41,6 +46,8 @@ public class PlaylistFragment extends BaseFragment implements PlaylistItemDelega
         View view = inflater.inflate(R.layout.frag_playlist, container, false);
         ButterKnife.bind(this, view);
 
+        vpEmptyPlaylist.setEmptyData("Ha Ha No Data");
+        rvPlaylist.setEmptyView(vpEmptyPlaylist);
         rvPlaylist.setLayoutManager(new GridLayoutManager(getContext(), 2));
         PlaylistAdapter playlistAdapter = new PlaylistAdapter(getContext(),this);
         rvPlaylist.setAdapter(playlistAdapter);

@@ -40,6 +40,6 @@ public class TalkAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 7;
+        return 0;
     }
 }

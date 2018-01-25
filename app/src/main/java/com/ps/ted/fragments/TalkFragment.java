@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.ps.ted.R;
 import com.ps.ted.adapters.TalkAdapter;
+import com.ps.ted.components.EmptyViewPod;
+import com.ps.ted.components.SmartRecyclerView;
 import com.ps.ted.delegates.TalkItemDelegate;
 
 import butterknife.BindView;
@@ -25,7 +27,10 @@ import butterknife.ButterKnife;
 public class TalkFragment extends BaseFragment implements TalkItemDelegate {
 
     @BindView(R.id.rv_talks)
-    RecyclerView rvTalks;
+    SmartRecyclerView rvTalks;
+
+    @BindView(R.id.vp_empty_talk)
+    EmptyViewPod vpEmptyTalk;
 
     public TalkFragment() {
 
@@ -37,6 +42,8 @@ public class TalkFragment extends BaseFragment implements TalkItemDelegate {
         View view = inflater.inflate(R.layout.frag_talk, container, false);
         ButterKnife.bind(this, view);
 
+        vpEmptyTalk.setEmptyData("Ha Ha No Data");
+        rvTalks.setEmptyView(vpEmptyTalk);
         rvTalks.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         TalkAdapter talkAdapter = new TalkAdapter(getContext(), this);
         rvTalks.setAdapter(talkAdapter);

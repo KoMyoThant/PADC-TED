@@ -3,9 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
+    <com.ps.ted.components.SmartRecyclerView
         android:id="@+id/rv_playlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/margin_medium"/>
+        android:layout_marginRight="@dimen/margin_medium" />
+
+    <include
+        android:id="@+id/vp_empty_playlist"
+        layout="@layout/view_pod_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </FrameLayout>

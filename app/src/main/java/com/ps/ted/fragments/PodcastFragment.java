@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.ps.ted.R;
 import com.ps.ted.adapters.PodcastAdapter;
+import com.ps.ted.components.EmptyViewPod;
+import com.ps.ted.components.SmartRecyclerView;
 import com.ps.ted.delegates.PodcastItemDelegate;
 
 import butterknife.BindView;
@@ -25,7 +27,10 @@ import butterknife.ButterKnife;
 public class PodcastFragment extends BaseFragment implements PodcastItemDelegate {
 
     @BindView(R.id.rv_podcast)
-    RecyclerView rvPodcasts;
+    SmartRecyclerView rvPodcasts;
+
+    @BindView(R.id.vp_empty_podcast)
+    EmptyViewPod vpEmptyPodcast;
 
     public PodcastFragment() {
 
@@ -42,6 +47,8 @@ public class PodcastFragment extends BaseFragment implements PodcastItemDelegate
         View view = inflater.inflate(R.layout.frag_podcast, container, false);
         ButterKnife.bind(this, view);
 
+        vpEmptyPodcast.setEmptyData("Ha Ha No Data");
+        rvPodcasts.setEmptyView(vpEmptyPodcast);
         rvPodcasts.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         PodcastAdapter podcastAdapter = new PodcastAdapter(getContext(), this);
         rvPodcasts.setAdapter(podcastAdapter);

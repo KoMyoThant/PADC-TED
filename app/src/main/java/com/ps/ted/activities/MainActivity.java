@@ -1,5 +1,6 @@
 package com.ps.ted.activities;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 
 import com.ps.ted.R;
 import com.ps.ted.adapters.TabPagerAdapter;
+import com.ps.ted.data.model.TEDModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +31,8 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.fab_search)
     FloatingActionButton fabSearch;
+
+    private TEDModel mTedModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(searchIntent);
             }
         });
+
     }
 
     @Override

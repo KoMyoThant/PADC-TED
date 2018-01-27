@@ -6,26 +6,26 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
-import com.ps.ted.data.vo.TalkVO;
+import com.ps.ted.data.vo.PodcastVO;
 
 import java.util.List;
 
 /**
- * Created by pyaesone on 1/26/18.
+ * Created by pyaesone on 1/27/18.
  */
 
 @Dao
-public interface TalkDao {
+public interface PodcastDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    long insertTalk(TalkVO talk);
+    long insertPodcast(PodcastVO podcast);
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    long[] insertTalks(TalkVO... talks);
+    long[] insertPodcasts(PodcastVO... podcasts);
 
-    @Query("SELECT * FROM talk")
-    LiveData<List<TalkVO>> getAllTalks();
+    @Query("SELECT * FROM podcast")
+    LiveData<List<PodcastVO>> getAllPodcasts();
 
-    @Query("DELETE FROM talk")
+    @Query("DELETE FROM podcast")
     void deleteAll();
 }

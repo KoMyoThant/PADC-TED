@@ -1,5 +1,6 @@
 package com.ps.ted.fragments;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ import com.ps.ted.R;
 import com.ps.ted.adapters.TalkAdapter;
 import com.ps.ted.components.EmptyViewPod;
 import com.ps.ted.components.SmartRecyclerView;
+import com.ps.ted.data.model.TEDModel;
 import com.ps.ted.delegates.TalkItemDelegate;
 
 import butterknife.BindView;
@@ -32,6 +34,8 @@ public class TalkFragment extends BaseFragment implements TalkItemDelegate {
     @BindView(R.id.vp_empty_talk)
     EmptyViewPod vpEmptyTalk;
 
+    private TEDModel mTedModel;
+
     public TalkFragment() {
 
     }
@@ -41,6 +45,9 @@ public class TalkFragment extends BaseFragment implements TalkItemDelegate {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_talk, container, false);
         ButterKnife.bind(this, view);
+
+        mTedModel = new TEDModel();
+        mTedModel = ViewModelProviders.of(this).get(TEDModel.class);
 
         vpEmptyTalk.setEmptyData("Ha Ha No Data");
         rvTalks.setEmptyView(vpEmptyTalk);

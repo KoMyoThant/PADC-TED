@@ -25,7 +25,7 @@ import com.ps.ted.data.vo.SpeakerVO;
 import com.ps.ted.data.vo.TagVO;
 import com.ps.ted.data.vo.TalkVO;
 
-@Database(entities = {TalkVO.class, TagVO.class, SpeakerVO.class}, version = 8)
+@Database(entities = {TalkVO.class, TagVO.class, SpeakerVO.class, PodcastDao.class, PodcastDao.class, SearchDao.class, SegmentDao.class}, version = 8)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DB_NAME = "PADC-TED.DB";
@@ -37,6 +37,14 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract TagDao tagDao();
 
     public abstract SpeakerDao speakerDao();
+
+    public abstract PlaylistDao playlistDao();
+
+    public abstract PodcastDao podcastDao();
+
+    public abstract SearchDao searchDao();
+
+    public abstract SegmentDao segmentDao();
 
     public static AppDatabase getInMemoryDatabase(Context context) {
         if (INSTANCE == null) {

@@ -39,4 +39,20 @@ public class TagVO {
     public String getDescription() {
         return description;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setTagId(long tagId) {
+        this.tagId = tagId;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

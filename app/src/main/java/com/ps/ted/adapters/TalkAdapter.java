@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ps.ted.R;
+import com.ps.ted.data.vo.TalkVO;
 import com.ps.ted.delegates.TalkItemDelegate;
 import com.ps.ted.viewholders.TalkViewHolder;
 
@@ -14,32 +15,19 @@ import com.ps.ted.viewholders.TalkViewHolder;
  * Created by pyaesone on 1/24/18.
  */
 
-public class TalkAdapter extends RecyclerView.Adapter {
+public class TalkAdapter extends BaseRecyclerAdapter<TalkViewHolder,TalkVO>{
 
-    private LayoutInflater mInflater;
-    private Context mContext;
     private TalkItemDelegate mTalkItemDelegate;
 
     public TalkAdapter(Context context,TalkItemDelegate talkItemDelegate) {
-        mContext = context;
-        mInflater = LayoutInflater.from(mContext);
+        super(context);
         mTalkItemDelegate = talkItemDelegate;
     }
 
     @Override
     public TalkViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.view_item_talk, parent, false);
+        View view = mLayoutInflater.inflate(R.layout.view_item_talk, parent, false);
 
         return new TalkViewHolder(view,mTalkItemDelegate);
-    }
-
-    @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return 0;
     }
 }

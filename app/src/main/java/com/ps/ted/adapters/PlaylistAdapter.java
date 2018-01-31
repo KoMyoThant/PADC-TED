@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ps.ted.R;
+import com.ps.ted.data.vo.PlaylistVO;
 import com.ps.ted.delegates.PlaylistItemDelegate;
 import com.ps.ted.viewholders.PlaylistViewHolder;
 
@@ -14,15 +15,12 @@ import com.ps.ted.viewholders.PlaylistViewHolder;
  * Created by pyaesone on 1/24/18.
  */
 
-public class PlaylistAdapter extends RecyclerView.Adapter {
+public class PlaylistAdapter extends BaseRecyclerAdapter<PlaylistViewHolder,PlaylistVO> {
 
-    private Context mContext;
-    private LayoutInflater mLayoutInflater;
     private PlaylistItemDelegate mPlaylistItemDelegate;
 
     public PlaylistAdapter(Context context, PlaylistItemDelegate playlistItemDelegate) {
-        mContext = context;
-        mLayoutInflater = LayoutInflater.from(mContext);
+        super(context);
         mPlaylistItemDelegate = playlistItemDelegate;
     }
 
@@ -34,7 +32,7 @@ public class PlaylistAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(PlaylistViewHolder holder, int position) {
 
     }
 

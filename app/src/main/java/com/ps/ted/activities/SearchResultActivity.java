@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.ps.ted.R;
 import com.ps.ted.adapters.SearchResultAdapter;
+import com.ps.ted.components.EmptyViewPod;
+import com.ps.ted.components.SmartRecyclerView;
 import com.ps.ted.delegates.SearchResultDelegate;
 
 import butterknife.BindView;
@@ -22,7 +24,10 @@ import butterknife.ButterKnife;
 public class SearchResultActivity extends BaseActivity implements SearchResultDelegate {
 
     @BindView(R.id.rv_search_result)
-    RecyclerView rvSearchResult;
+    SmartRecyclerView rvSearchResult;
+
+    @BindView(R.id.vp_empty_search_result)
+    EmptyViewPod vpEmptySearchResult;
 
     public static Intent newIntent(Context context) {
         Intent intent = new Intent(context, SearchResultActivity.class);
@@ -35,6 +40,8 @@ public class SearchResultActivity extends BaseActivity implements SearchResultDe
         setContentView(R.layout.activity_search_result);
         ButterKnife.bind(this, this);
 
+        vpEmptySearchResult.setEmptyData("Ha Ha No Data");
+        rvSearchResult.setEmptyView(vpEmptySearchResult);
         rvSearchResult.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         SearchResultAdapter searchResultAdapter = new SearchResultAdapter(getApplicationContext(), this);
         rvSearchResult.setAdapter(searchResultAdapter);

@@ -1,9 +1,13 @@
 package com.ps.ted.data.vo;
 
+import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverters;
 
 import com.google.gson.annotations.SerializedName;
+import com.ps.ted.data.db.SpeakerTypeConvector;
+import com.ps.ted.data.db.TagTypeConvector;
 
 import java.util.List;
 
@@ -12,10 +16,11 @@ import java.util.List;
  */
 
 @Entity(tableName = "talk")
+@TypeConverters({TagTypeConvector.class})
 public class TalkVO {
 
     @PrimaryKey(autoGenerate = true)
-    private long id;
+    private long _id;
 
     @SerializedName("talk_id")
     private long talkId;
@@ -23,8 +28,9 @@ public class TalkVO {
     @SerializedName("title")
     private String title;
 
-//    @SerializedName("speaker")
-//    private SpeakerVO speaker;
+    @Embedded
+    @SerializedName("speaker")
+    private SpeakerVO speaker;
 
     @SerializedName("imageUrl")
     private String image;
@@ -35,11 +41,11 @@ public class TalkVO {
     @SerializedName("description")
     private String description;
 
-//    @SerializedName("tag")
-//    private List<TagVO> tag;
+    @SerializedName("tag")
+    private List<TagVO> tag;
 
     public long getId() {
-        return id;
+        return _id;
     }
 
     public long getTalkId() {
@@ -50,9 +56,9 @@ public class TalkVO {
         return title;
     }
 
-//    public SpeakerVO getSpeaker() {
-//        return speaker;
-//    }
+    public SpeakerVO getSpeaker() {
+        return speaker;
+    }
 
     public String getImage() {
         return image;
@@ -66,12 +72,12 @@ public class TalkVO {
         return description;
     }
 
-//    public List<TagVO> getTag() {
-//        return tag;
-//    }
+    public List<TagVO> getTag() {
+        return tag;
+    }
 
     public void setId(long id) {
-        this.id = id;
+        this._id = id;
     }
 
     public void setTalkId(long talkId) {
@@ -82,9 +88,9 @@ public class TalkVO {
         this.title = title;
     }
 
-//    public void setSpeaker(SpeakerVO speaker) {
-//        this.speaker = speaker;
-//    }
+    public void setSpeaker(SpeakerVO speaker) {
+        this.speaker = speaker;
+    }
 
     public void setImage(String image) {
         this.image = image;
@@ -98,7 +104,7 @@ public class TalkVO {
         this.description = description;
     }
 
-//    public void setTag(List<TagVO> tag) {
-//        this.tag = tag;
-//    }
+    public void setTag(List<TagVO> tag) {
+        this.tag = tag;
+    }
 }

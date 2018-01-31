@@ -33,7 +33,7 @@ public class PlaylistVO {
     private String description;
 
     @SerializedName("talksInPlaylist")
-    private List<TalkVO> talksInPlaylist;
+    private String talksInPlaylist;
 
 
     public long getId() {
@@ -84,11 +84,20 @@ public class PlaylistVO {
         this.description = description;
     }
 
-    public List<TalkVO> getTalksInPlaylist() {
+//    public List<TalkVO> getTalksInPlaylist() {
+//        return talksInPlaylist;
+//    }
+//
+//    public void setTalksInPlaylist(List<TalkVO> talksInPlaylist) {
+//        this.talksInPlaylist = talksInPlaylist;
+//    }
+
+
+    public String getTalksInPlaylist() {
         return talksInPlaylist;
     }
 
-    public void setTalksInPlaylist(List<TalkVO> talksInPlaylist) {
+    public void setTalksInPlaylist(String talksInPlaylist) {
         this.talksInPlaylist = talksInPlaylist;
     }
 }

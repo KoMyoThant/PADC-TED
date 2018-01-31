@@ -30,7 +30,7 @@ public class PodcastVO {
     private String description;
 
     @SerializedName("segments")
-    private List<SegmentVO> segmentList;
+    private String segmentList;
 
     public long getId() {
         return id;
@@ -72,11 +72,20 @@ public class PodcastVO {
         this.description = description;
     }
 
-    public List<SegmentVO> getSegmentList() {
+//    public List<SegmentVO> getSegmentList() {
+//        return segmentList;
+//    }
+//
+//    public void setSegmentList(List<SegmentVO> segmentList) {
+//        this.segmentList = segmentList;
+//    }
+
+
+    public String getSegmentList() {
         return segmentList;
     }
 
-    public void setSegmentList(List<SegmentVO> segmentList) {
+    public void setSegmentList(String segmentList) {
         this.segmentList = segmentList;
     }
 }

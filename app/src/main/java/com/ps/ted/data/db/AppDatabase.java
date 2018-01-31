@@ -21,11 +21,15 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
+import com.ps.ted.data.vo.PlaylistVO;
+import com.ps.ted.data.vo.PodcastVO;
+import com.ps.ted.data.vo.SearchVO;
+import com.ps.ted.data.vo.SegmentVO;
 import com.ps.ted.data.vo.SpeakerVO;
 import com.ps.ted.data.vo.TagVO;
 import com.ps.ted.data.vo.TalkVO;
 
-@Database(entities = {TalkVO.class, TagVO.class, SpeakerVO.class, PodcastDao.class, PodcastDao.class, SearchDao.class, SegmentDao.class}, version = 8)
+@Database(entities = {TalkVO.class, TagVO.class, SpeakerVO.class, PlaylistVO.class, PodcastVO.class, SearchVO.class, SegmentVO.class}, version = 8)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DB_NAME = "PADC-TED.DB";

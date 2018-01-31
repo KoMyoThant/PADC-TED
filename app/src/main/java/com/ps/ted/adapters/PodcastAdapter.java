@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ps.ted.R;
+import com.ps.ted.data.vo.PodcastVO;
 import com.ps.ted.delegates.PodcastItemDelegate;
 import com.ps.ted.viewholders.PodcastViewHolder;
 
@@ -14,15 +15,12 @@ import com.ps.ted.viewholders.PodcastViewHolder;
  * Created by pyaesone on 1/25/18.
  */
 
-public class PodcastAdapter extends RecyclerView.Adapter {
+public class PodcastAdapter extends BaseRecyclerAdapter<PodcastViewHolder,PodcastVO> {
 
-    private Context mContext;
-    private LayoutInflater mLayoutInflater;
     private PodcastItemDelegate mPodcastItemDelegate;
 
     public PodcastAdapter(Context context, PodcastItemDelegate podcastItemDelegate) {
-        mContext = context;
-        mLayoutInflater = LayoutInflater.from(mContext);
+        super(context);
         mPodcastItemDelegate = podcastItemDelegate;
     }
 
@@ -34,7 +32,7 @@ public class PodcastAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(PodcastViewHolder holder, int position) {
 
     }
 

@@ -25,7 +25,7 @@ public class GetTalkResponse {
     private int pageNo;
 
     @SerializedName("ted_talks")
-    private String talkList;
+    private List<TalkVO> talkList;
 
     public int getCode() {
         return code;
@@ -43,19 +43,19 @@ public class GetTalkResponse {
         return pageNo;
     }
 
-//    public List<TalkVO> getTalkList() {
-//        if(talkList == null){
-//            talkList = new ArrayList<>();
-//        }
-//
-//        return talkList;
-//    }
+    public List<TalkVO> getTalkList() {
+        if(talkList == null){
+            talkList = new ArrayList<>();
+        }
 
-    public String getTalkList() {
+        return talkList;
+    }
+
+ /*   public String getTalkList() {
         return talkList;
     }
 
     public void setTalkList(String talkList) {
         this.talkList = talkList;
-    }
+    }*/
 }

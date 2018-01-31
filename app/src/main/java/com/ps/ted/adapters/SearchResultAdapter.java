@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ps.ted.R;
+import com.ps.ted.data.vo.SearchVO;
 import com.ps.ted.delegates.SearchDelegate;
 import com.ps.ted.delegates.SearchResultDelegate;
 import com.ps.ted.viewholders.SearchResultViewHolder;
@@ -15,15 +16,12 @@ import com.ps.ted.viewholders.SearchResultViewHolder;
  * Created by pyaesone on 1/25/18.
  */
 
-public class SearchResultAdapter extends RecyclerView.Adapter {
+public class SearchResultAdapter extends BaseRecyclerAdapter<SearchResultViewHolder,SearchVO> {
 
-    private Context mContext;
-    private LayoutInflater mLayoutInflater;
     private SearchResultDelegate mSearchResultDelegate;
 
     public SearchResultAdapter(Context context, SearchResultDelegate searchResultDelegate) {
-        mContext = context;
-        mLayoutInflater = LayoutInflater.from(mContext);
+        super(context);
         mSearchResultDelegate = searchResultDelegate;
     }
 
@@ -35,7 +33,7 @@ public class SearchResultAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(SearchResultViewHolder holder, int position) {
 
     }
 

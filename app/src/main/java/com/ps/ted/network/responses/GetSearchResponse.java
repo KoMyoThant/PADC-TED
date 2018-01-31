@@ -24,8 +24,8 @@ public class GetSearchResponse {
     @SerializedName("page")
     private int pageNo;
 
-    @SerializedName("")
-    private String searchList;
+    @SerializedName("results")
+    private List<SearchVO> searchList;
 
     public int getCode() {
         return code;
@@ -59,24 +59,15 @@ public class GetSearchResponse {
         this.pageNo = pageNo;
     }
 
-//    public List<SearchVO> getSearchList() {
-//        if(searchList == null){
-//            searchList = new ArrayList<>();
-//        }
-//
-//        return searchList;
-//    }
-//
-//    public void setSearchList(List<SearchVO> searchList) {
-//        this.searchList = searchList;
-//    }
+    public List<SearchVO> getSearchList() {
+        if(searchList == null){
+            searchList = new ArrayList<>();
+        }
 
-
-    public String getSearchList() {
         return searchList;
     }
 
-    public void setSearchList(String searchList) {
+    public void setSearchList(List<SearchVO> searchList) {
         this.searchList = searchList;
     }
 }

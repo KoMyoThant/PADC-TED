@@ -12,6 +12,7 @@ public class ConfigUtils {
     private static final String KEY_TALK_PAGE_INDEX = "KEY_TALK_PAGE_INDEX";
     private static final String KEY_PLAYLIST_PAGE_INDEX = "KEY_PLAYLIST_PAGE_INDEX";
     private static final String KEY_PODCAST_PAGE_INDEX = "KEY_PODCAST_PAGE_INDEX";
+    private static final String KEY_SEARCH_RESULT_PAGE_INDEX = "KEY_SEARCH_RESULT_PAGE_INDEX";
 
     private static ConfigUtils mObjInstance;
 
@@ -51,5 +52,13 @@ public class ConfigUtils {
 
     public int loadPodcastPageIndex() {
         return mSharedPreferences.getInt(KEY_PODCAST_PAGE_INDEX, 1);
+    }
+
+    public void saveSearchResultPageIndex(int pageIndex) {
+        mSharedPreferences.edit().putInt(KEY_SEARCH_RESULT_PAGE_INDEX, pageIndex).apply();
+    }
+
+    public int loadSearchResultPageIndex() {
+        return mSharedPreferences.getInt(KEY_SEARCH_RESULT_PAGE_INDEX, 1);
     }
 }

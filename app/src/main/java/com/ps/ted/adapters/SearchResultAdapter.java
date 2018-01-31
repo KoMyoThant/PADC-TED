@@ -32,13 +32,13 @@ public class SearchResultAdapter extends BaseRecyclerAdapter<SearchResultViewHol
         return new SearchResultViewHolder(view, mSearchResultDelegate);
     }
 
-    @Override
-    public void onBindViewHolder(SearchResultViewHolder holder, int position) {
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return 7;
-    }
+//    @Override
+//    public void onBindViewHolder(SearchResultViewHolder holder, int position) {
+//
+//    }
+//
+//    @Override
+//    public int getItemCount() {
+//        return 7;
+//    }
 }

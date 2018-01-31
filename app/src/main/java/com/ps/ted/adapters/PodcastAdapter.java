@@ -31,13 +31,13 @@ public class PodcastAdapter extends BaseRecyclerAdapter<PodcastViewHolder,Podcas
         return new PodcastViewHolder(view, mPodcastItemDelegate);
     }
 
-    @Override
-    public void onBindViewHolder(PodcastViewHolder holder, int position) {
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return 7;
-    }
+//    @Override
+//    public void onBindViewHolder(PodcastViewHolder holder, int position) {
+//
+//    }
+//
+//    @Override
+//    public int getItemCount() {
+//        return 7;
+//    }
 }

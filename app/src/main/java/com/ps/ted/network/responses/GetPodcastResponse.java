@@ -24,8 +24,8 @@ public class GetPodcastResponse {
     @SerializedName("page")
     private int pageNo;
 
-    @SerializedName("ted_talks")
-    private String podcastList;
+    @SerializedName("ted_podcasts")
+    private List<PodcastVO> podcastList;
 
     public int getCode() {
         return code;
@@ -59,24 +59,16 @@ public class GetPodcastResponse {
         this.pageNo = pageNo;
     }
 
-//    public List<PodcastVO> getPodcastList() {
-//        if(podcastList == null){
-//            podcastList = new ArrayList<>();
-//        }
-//
-//        return podcastList;
-//    }
-//
-//    public void setPodcastList(List<PodcastVO> podcastList) {
-//        this.podcastList = podcastList;
-//    }
+    public List<PodcastVO> getPodcastList() {
+        if(podcastList == null){
+            podcastList = new ArrayList<>();
+        }
 
-
-    public String getPodcastList() {
         return podcastList;
     }
 
-    public void setPodcastList(String podcastList) {
+    public void setPodcastList(List<PodcastVO> podcastList) {
         this.podcastList = podcastList;
     }
+
 }

@@ -1,7 +1,6 @@
 package com.ps.ted.mvp.views;
 
 import com.ps.ted.data.vo.PlaylistVO;
-import com.ps.ted.data.vo.TalkVO;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ import java.util.List;
 
 public interface PlaylistView {
 
-    void displayPlaylistList(List<PlaylistVO> talkList);
+    void displayPlaylistList(List<PlaylistVO> podcastList);
 
     void refreshPlaylistList();
 }

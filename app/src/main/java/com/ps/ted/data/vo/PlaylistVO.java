@@ -2,8 +2,10 @@ package com.ps.ted.data.vo;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverters;
 
 import com.google.gson.annotations.SerializedName;
+import com.ps.ted.data.db.TalkTypeConvector;
 
 import java.util.List;
 
@@ -12,6 +14,7 @@ import java.util.List;
  */
 
 @Entity(tableName = "playlist")
+@TypeConverters({TalkTypeConvector.class})
 public class PlaylistVO {
 
     @PrimaryKey(autoGenerate = true)
@@ -33,7 +36,7 @@ public class PlaylistVO {
     private String description;
 
     @SerializedName("talksInPlaylist")
-    private String talksInPlaylist;
+    private List<TalkVO> talksInPlaylist;
 
 
     public long getId() {
@@ -84,20 +87,11 @@ public class PlaylistVO {
         this.description = description;
     }
 
-//    public List<TalkVO> getTalksInPlaylist() {
-//        return talksInPlaylist;
-//    }
-//
-//    public void setTalksInPlaylist(List<TalkVO> talksInPlaylist) {
-//        this.talksInPlaylist = talksInPlaylist;
-//    }
-
-
-    public String getTalksInPlaylist() {
+    public List<TalkVO> getTalksInPlaylist() {
         return talksInPlaylist;
     }
 
-    public void setTalksInPlaylist(String talksInPlaylist) {
+    public void setTalksInPlaylist(List<TalkVO> talksInPlaylist) {
         this.talksInPlaylist = talksInPlaylist;
     }
 }

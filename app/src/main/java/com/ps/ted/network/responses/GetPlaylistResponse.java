@@ -25,7 +25,7 @@ public class GetPlaylistResponse {
     private int pageNo;
 
     @SerializedName("ted_playlists")
-    private String playlistList;
+    private List<PlaylistVO> playlistList;
 
     public int getCode() {
         return code;
@@ -59,23 +59,15 @@ public class GetPlaylistResponse {
         this.pageNo = pageNo;
     }
 
-//    public void setPlaylistList(List<PlaylistVO> playlistList) {
-//        this.playlistList = playlistList;
-//    }
-//
-//    public List<PlaylistVO> getPlaylistList() {
-//        if (playlistList == null) {
-//            playlistList = new ArrayList<>();
-//        }
-//
-//        return playlistList;
-//    }
-
-    public String getPlaylistList() {
-        return playlistList;
+    public void setPlaylistList(List<PlaylistVO> playlistList) {
+        this.playlistList = playlistList;
     }
 
-    public void setPlaylistList(String playlistList) {
-        this.playlistList = playlistList;
+    public List<PlaylistVO> getPlaylistList() {
+        if (playlistList == null) {
+            playlistList = new ArrayList<>();
+        }
+
+        return playlistList;
     }
 }

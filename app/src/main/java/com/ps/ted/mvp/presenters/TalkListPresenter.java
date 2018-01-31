@@ -2,8 +2,6 @@ package com.ps.ted.mvp.presenters;
 
 import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
-import android.content.Context;
 import android.support.annotation.Nullable;
 
 import com.ps.ted.data.model.TEDModel;
@@ -62,6 +60,6 @@ public class TalkListPresenter extends BasePresenter<TalkListView> implements Ta
     }
 
     public void onNewsListEndReach(){
-        mTedModel.loadMoreNews();
+        mTedModel.loadMoreTalks();
     }
 }

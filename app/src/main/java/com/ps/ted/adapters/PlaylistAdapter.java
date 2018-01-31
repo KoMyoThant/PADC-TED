@@ -31,13 +31,13 @@ public class PlaylistAdapter extends BaseRecyclerAdapter<PlaylistViewHolder,Play
         return new PlaylistViewHolder(view, mPlaylistItemDelegate);
     }
 
-    @Override
-    public void onBindViewHolder(PlaylistViewHolder holder, int position) {
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return 0;
-    }
+//    @Override
+//    public void onBindViewHolder(PlaylistViewHolder holder, int position) {
+//
+//    }
+//
+//    @Override
+//    public int getItemCount() {
+//        return 0;
+//    }
 }

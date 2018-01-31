@@ -4,7 +4,7 @@ import com.ps.ted.network.responses.GetPlaylistResponse;
 import com.ps.ted.network.responses.GetPodcastResponse;
 import com.ps.ted.network.responses.GetSearchResponse;
 import com.ps.ted.network.responses.GetTalkResponse;
-import com.ps.ted.util.AppConstants;
+import com.ps.ted.utils.AppConstants;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;

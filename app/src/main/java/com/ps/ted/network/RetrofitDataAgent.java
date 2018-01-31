@@ -1,7 +1,7 @@
 package com.ps.ted.network;
 
 import com.google.gson.Gson;
-import com.ps.ted.util.AppConstants;
+import com.ps.ted.utils.AppConstants;
 
 import java.util.concurrent.TimeUnit;
 

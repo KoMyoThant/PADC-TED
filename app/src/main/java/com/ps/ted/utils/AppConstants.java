@@ -1,4 +1,4 @@
-package com.ps.ted.util;
+package com.ps.ted.utils;
 
 /**
  * Created by pyaesone on 1/26/18.

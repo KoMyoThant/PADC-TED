@@ -1,6 +1,5 @@
 package com.ps.ted.data.model;
 
-import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
@@ -14,7 +13,8 @@ import com.ps.ted.data.vo.TagVO;
 import com.ps.ted.data.vo.TalkVO;
 import com.ps.ted.network.RetrofitDataAgent;
 import com.ps.ted.network.responses.GetTalkResponse;
-import com.ps.ted.util.AppConstants;
+import com.ps.ted.utils.AppConstants;
+import com.ps.ted.utils.ConfigUtils;
 
 import java.util.List;
 
@@ -39,6 +39,8 @@ public class TEDModel extends ViewModel {
 
     private RetrofitDataAgent retrofitDataAgent;
 
+    private ConfigUtils configUtils;
+
     public TEDModel() {
         talkList = new MutableLiveData<>();
         retrofitDataAgent = new RetrofitDataAgent();
@@ -46,6 +48,7 @@ public class TEDModel extends ViewModel {
 
     public void initDatabase(Context context) {
         mAppDatabase = AppDatabase.getInMemoryDatabase(context);
+        configUtils = ConfigUtils.getInstance(context);
     }
 
     public LiveData<List<TalkVO>> getTalks() {
@@ -67,12 +70,12 @@ public class TEDModel extends ViewModel {
         AppDatabase.destroyInstance();
     }
 
-    public LiveData<List<TalkVO>> startLoadingTalks(){
-        return loadTalks();
+    public LiveData<List<TalkVO>> startLoadingTalks() {
+        return loadTalks(AppConstants.ACCESS_TOKEN, configUtils.loadPageIndex());
     }
 
-    public LiveData<List<TalkVO>> loadTalks() {
-        Observable<GetTalkResponse> talksResponseObservable = retrofitDataAgent.getTEDApi().loadTEDTalks(AppConstants.ACCESS_TOKEN, 1);
+    public LiveData<List<TalkVO>> loadTalks(String accessToken, int pageNo) {
+        Observable<GetTalkResponse> talksResponseObservable = retrofitDataAgent.getTEDApi().loadTEDTalks(accessToken, pageNo);
         talksResponseObservable
                 .subscribeOn(Schedulers.io()) //run value creation code on a specific thread (non-UI thread)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -86,6 +89,7 @@ public class TEDModel extends ViewModel {
                     @Override
                     public void onNext(@NonNull GetTalkResponse getTalksResponse) {
                         talkList.setValue(getTalksResponse.getTalkList());
+                        configUtils.savePageIndex(getTalksResponse.getPageNo() + 1);
 
                         Log.d(TEDApp.LOG_TAG, "talkList size onNext : " + talkList.getValue().size());
 
@@ -106,6 +110,10 @@ public class TEDModel extends ViewModel {
 
         return talkList;
 
+    }
+
+    public LiveData<List<TalkVO>> loadMoreNews(){
+        return loadTalks(AppConstants.ACCESS_TOKEN, configUtils.loadPageIndex());
     }
 
 }

@@ -17,6 +17,7 @@ import com.ps.ted.R;
 import com.ps.ted.adapters.TalkAdapter;
 import com.ps.ted.components.EmptyViewPod;
 import com.ps.ted.components.SmartRecyclerView;
+import com.ps.ted.components.SmartScrollListener;
 import com.ps.ted.data.model.TEDModel;
 import com.ps.ted.data.vo.TalkVO;
 import com.ps.ted.delegates.TalkItemDelegate;
@@ -49,6 +50,8 @@ public class TalkFragment extends BaseFragment implements TalkListView {
 
     private TalkListPresenter mPresenter;
 
+    private SmartScrollListener mSmartScrollListener;
+
     public TalkFragment() {
 
     }
@@ -72,12 +75,14 @@ public class TalkFragment extends BaseFragment implements TalkListView {
         talkAdapter = new TalkAdapter(getContext(), mPresenter);
         rvTalks.setAdapter(talkAdapter);
 
-//        mTedModel.getTalks().observe(this, new Observer<List<TalkVO>>() {
-//            @Override
-//            public void onChanged(@Nullable List<TalkVO> talkVOS) {
-//                talkAdapter.setNewData(talkVOS);
-//            }
-//        });
+
+        mSmartScrollListener = new SmartScrollListener(new SmartScrollListener.OnSmartScrollListener() {
+            @Override
+            public void onListEndReach() {
+                mPresenter.onNewsListEndReach();
+            }
+        });
+        rvTalks.addOnScrollListener(mSmartScrollListener);
 
         return view;
     }
